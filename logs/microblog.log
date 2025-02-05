@@ -1,9 +1,37 @@
-2025-02-03 18:47:35,550 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-03 18:47:54,446 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-03 18:49:00,999 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-03 18:49:14,371 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-03 18:49:26,319 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-03 18:50:17,755 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-03 18:50:34,928 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-04 17:07:42,164 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
-2025-02-04 17:24:27,329 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-04 19:19:24,454 ERROR: Exception on /index [GET] [in C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\routes.py", line 23, in index
+    posts = db.session.sscalars(current_user.following_posts()).all()
+            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'scoped_session' object has no attribute 'sscalars'. Did you mean: 'scalars'?
+2025-02-04 19:19:32,469 ERROR: Exception on /index [GET] [in C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\routes.py", line 23, in index
+    posts = db.session.sscalars(current_user.following_posts()).all()
+            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'scoped_session' object has no attribute 'sscalars'. Did you mean: 'scalars'?
+2025-02-04 19:19:53,699 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]

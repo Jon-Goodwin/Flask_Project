@@ -1,0 +1,105 @@
+2025-02-03 18:47:35,550 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-03 18:47:54,446 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-03 18:49:00,999 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-03 18:49:14,371 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-03 18:49:26,319 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-03 18:50:17,755 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-03 18:50:34,928 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-04 17:07:42,164 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-04 17:24:27,329 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-04 19:18:33,159 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-04 19:18:34,107 ERROR: Exception on / [GET] [in C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\routes.py", line 23, in index
+    posts = db.session.sscalars(current_user.following_posts()).all()
+            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'scoped_session' object has no attribute 'sscalars'. Did you mean: 'scalars'?
+2025-02-04 19:18:34,327 ERROR: Exception on /favicon.ico [GET] [in C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\errors.py", line 7, in not_found_error
+    return render_template("404.html"), 404
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\templates\404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\templates\base.html", line 14, in top-level template code
+    <a href="{{ url_for('explor') }}">Explore</a>
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'explor'. Did you mean 'explore' instead?
+2025-02-04 19:19:18,969 INFO: Microblog startup [in C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\__init__.py:49]
+2025-02-04 19:19:19,713 ERROR: Exception on / [GET] [in C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\johng\AppData\Local\miniforge3\envs\myenv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\johng\OneDrive\Documents\Python Projects\Flask_Project\app\routes.py", line 23, in index
+    posts = db.session.sscalars(current_user.following_posts()).all()
+            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'scoped_session' object has no attribute 'sscalars'. Did you mean: 'scalars'?
